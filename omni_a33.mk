@@ -1,17 +1,15 @@
-# Inherit from our custom product configuration
+# Inherit
 $(call inherit-product, vendor/omni/config/common.mk)
-
-# Inherit from those products
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# 
+# Device info
 PRODUCT_DEVICE := a33
 PRODUCT_NAME := omni_a33
 PRODUCT_BRAND := OPPO
 PRODUCT_MODEL := OPPO A33
 PRODUCT_MANUFACTURER := OPPO
 
-# 全部保留
+# Recovery files
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/fstab.qcom:recovery/root/fstab.qcom \
     $(LOCAL_PATH)/recovery/root/fstab.goldfish:recovery/root/fstab.goldfish \
@@ -26,3 +24,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/init.target.rc:recovery/root/init.target.rc \
     $(LOCAL_PATH)/recovery/root/ueventd.goldfish.rc:recovery/root/ueventd.goldfish.rc \
     $(LOCAL_PATH)/recovery/root/ueventd.qcom.rc:recovery/root/ueventd.qcom.rc
+
+# Android 10 support
+PRODUCT_SHIPPING_API_LEVEL := 29
+PRODUCT_USE_DYNAMIC_PARTITIONS := false
