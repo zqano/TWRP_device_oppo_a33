@@ -1,34 +1,17 @@
-#
-# Copyright (C) 2015 The Android Open-Source Project
-#
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-# http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
-
 # Inherit from our custom product configuration
 $(call inherit-product, vendor/omni/config/common.mk)
 
-# Inherit from those products. Most specific first.
+# Inherit from those products
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Device identifier. This must come after all inclusions
-PRODUCT_DEVICE := a33f
-PRODUCT_NAME := omni_a33f
+# 
+PRODUCT_DEVICE := a33
+PRODUCT_NAME := omni_a33
 PRODUCT_BRAND := OPPO
-PRODUCT_MODEL := A33f
+PRODUCT_MODEL := OPPO A33
 PRODUCT_MANUFACTURER := OPPO
-PRODUCT_NAME := omni_a33f
 
-# TWRP RECOVERY
+# 全部保留
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/fstab.qcom:recovery/root/fstab.qcom \
     $(LOCAL_PATH)/recovery/root/fstab.goldfish:recovery/root/fstab.goldfish \
